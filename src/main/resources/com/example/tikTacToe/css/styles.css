@@ -1,0 +1,8 @@
+.root{
+    -fx-border-color:Red;
+    -fx-border-width: 20;
+}
+#pane2{
+    -fx-border-color: blue;
+    -fx-border-width: 20;
+}

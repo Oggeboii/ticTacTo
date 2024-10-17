@@ -1,8 +1,12 @@
-module com.example.tiktacto {
+module com.example.tikTacToe {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens com.example.tiktacto to javafx.fxml;
-    exports com.example.tiktacto;
+    opens com.example.tikTacToe to javafx.fxml;
+    exports com.example.tikTacToe;
+    exports com.example.tikTacToe.controller;
+    opens com.example.tikTacToe.controller to javafx.fxml;
+    exports com.example.tikTacToe.model;
+    opens com.example.tikTacToe.model to javafx.fxml;
 }
