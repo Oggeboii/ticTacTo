@@ -5,23 +5,31 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.scene.control.Cell;
 import javafx.scene.image.Image;
-import java.util.Random;
-import com.example.tikTacToe.model.Player;
+import javafx.scene.input.MouseEvent;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
+import static com.example.tikTacToe.Cells.*;
 import static com.example.tikTacToe.model.Player.*;
 
 public class Model {
+    Random rand = new Random();
+private final List <Cells> availableCells = new ArrayList<>();
+
     private int scoreP1 = 0;
     private int scoreP2 = 0;
-
-    private Player currentPlayer;
 
 
     private StringProperty player1 = new SimpleStringProperty("Player1");
     private StringProperty player2 = new SimpleStringProperty("Player2");
 
     private StringProperty scoringP1 = new SimpleStringProperty("0 Poäng");
+    private Player currentPlayer;
     private StringProperty scoringP2 = new SimpleStringProperty("0 Poäng");
 
 
@@ -39,7 +47,7 @@ public class Model {
     ObjectProperty<Image> eighthCell;
     ObjectProperty<Image> ninthCell;
 
-    Random rand = new Random();
+
 
     public Model() {
         currentPlayer = PLAYER1;
@@ -59,6 +67,7 @@ public class Model {
         seventhCell = new SimpleObjectProperty<>(blank);
         eighthCell = new SimpleObjectProperty<>(blank);
         ninthCell = new SimpleObjectProperty<>(blank);
+        availableCells.addAll(Arrays.asList(FIRST,SECOND,THIRD,FOURTH,FIFTH,SIXTH,SEVENTH,EIGHTH,NINTH));
     }
 
 
@@ -218,8 +227,22 @@ public class Model {
         this.ninthCell.set(ninthCell);
     }
 
+    public Cells npcCellChoice() {
+
+        int index = rand.nextInt(availableCells.size());
+        Cells cell = availableCells.get(index);
+        availableCells.remove(index);
+        return cell;
+
+
+    }
+    public void npcMove(){
+        cellClicked(npcCellChoice());
+    }
+
+
     public void cellClicked(Cells cells){
-        if (cells == Cells.FIRST && getFirstCell()== blank){
+        if (cells == FIRST && getFirstCell()== blank){
             if(currentPlayer == PLAYER1) {
                 setFirstCell(cross);
                 currentPlayer = NPC;
@@ -316,9 +339,7 @@ public class Model {
                 currentPlayer = PLAYER1;
             }
         }
-    }
-    public void winner(){
-
+        availableCells.remove(cells);
     }
 
 }

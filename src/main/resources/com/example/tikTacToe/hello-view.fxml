@@ -38,23 +38,32 @@
                   <RowConstraints minHeight="10.0" prefHeight="50.0" />
               </rowConstraints>
                 <children>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.firstCell}" onMouseClicked="#cellFirstClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.firstCell}" onMouseClicked="#cellFirstClicked"
+                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
                   </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.secondCell}" onMouseClicked="#cellSecondClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.secondCell}" onMouseClicked="#cellSecondClicked"
+                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
                   </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.thirdCell}" onMouseClicked="#cellThirdClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.thirdCell}" onMouseClicked="#cellThirdClicked"
+                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
                   </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.fourthCell}" onMouseClicked="#cellFourthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.fourthCell}" onMouseClicked="#cellFourthClicked"
+                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
                   </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.fifthCell}" onMouseClicked="#cellFifthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.fifthCell}" onMouseClicked="#cellFifthClicked"
+                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                   </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.sixthCell}" onMouseClicked="#cellSixthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.sixthCell}" onMouseClicked="#cellSixthClicked"
+                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                   </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.seventhCell}" onMouseClicked="#cellSeventhClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.seventhCell}" onMouseClicked="#cellSeventhClicked"
+                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
                   </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.eighthCell}" onMouseClicked="#cellEighthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.eighthCell}" onMouseClicked="#cellEighthClicked"
+                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                   </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.ninthCell}" onMouseClicked="#cellNinthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.ninthCell}" onMouseClicked="#cellNinthClicked"
+                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                   </ImageView>
               </children>
             </GridPane>

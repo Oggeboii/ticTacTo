@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="Somewhat working canvas. started on Model">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/Cells.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/images/circle.png" afterDir="false" />
+    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="switching between circle and cross per move">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +131,7 @@
       <workItem from="1729150545037" duration="6044000" />
       <workItem from="1729157032398" duration="9230000" />
       <workItem from="1729170309921" duration="5373000" />
-      <workItem from="1729493179934" duration="6017000" />
+      <workItem from="1729493179934" duration="10945000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -151,7 +147,14 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1729168168305</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="switching between circle and cross per move">
+      <option name="closed" value="true" />
+      <created>1729499269810</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1729499269810</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,7 +163,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Somewhat working canvas. started on Model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Somewhat working canvas. started on Model" />
+    <MESSAGE value="switching between circle and cross per move" />
+    <option name="LAST_COMMIT_MESSAGE" value="switching between circle and cross per move" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -2,16 +2,32 @@ package com.example.tikTacToe.controller;
 
 import com.example.tikTacToe.Cells;
 import com.example.tikTacToe.model.Model;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 
 import static com.example.tikTacToe.Cells.*;
 
 public class Controller {
     public void initialize() {
+        startRandomEvent();
 
-
+    }
+    private void startRandomEvent(){
+        Timeline timeline = new Timeline(
+                new KeyFrame(
+                        Duration.millis(Math.random()*3000),
+                        (ActionEvent event) ->{
+                            model.npcMove();
+                            Controller.this.startRandomEvent();
+                        }
+                )
+        );
+        timeline.play();
     }
 
 
@@ -24,6 +40,7 @@ public class Controller {
     public void cellFirstClicked(MouseEvent mouseEvent) {
         model.cellClicked(FIRST);
     }
+
     public void cellSecondClicked(MouseEvent mouseEvent) {
         model.cellClicked(SECOND);
     }
