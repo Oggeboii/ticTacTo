@@ -5,9 +5,7 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.scene.control.Cell;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,19 +17,17 @@ import static com.example.tikTacToe.model.Player.*;
 
 public class Model {
     Random rand = new Random();
-private final List <Cells> availableCells = new ArrayList<>();
+    private final List <Cells> availableCells = new ArrayList<>();
 
     private int scoreP1 = 0;
     private int scoreP2 = 0;
 
-
     private StringProperty player1 = new SimpleStringProperty("Player1");
     private StringProperty player2 = new SimpleStringProperty("Player2");
 
-    private StringProperty scoringP1 = new SimpleStringProperty("0 Poäng");
     private Player currentPlayer;
+    private StringProperty scoringP1 = new SimpleStringProperty("0 Poäng");
     private StringProperty scoringP2 = new SimpleStringProperty("0 Poäng");
-
 
     Image cross;
     Image blank;
@@ -47,12 +43,8 @@ private final List <Cells> availableCells = new ArrayList<>();
     ObjectProperty<Image> eighthCell;
     ObjectProperty<Image> ninthCell;
 
-
-
     public Model() {
         currentPlayer = PLAYER1;
-
-
 
         cross = new Image(getClass().getResource("/com/example/tikTacToe/images/cross.png").toExternalForm());
         circle = new Image(getClass().getResource("/com/example/tikTacToe/images/circle.png").toExternalForm());
@@ -233,13 +225,12 @@ private final List <Cells> availableCells = new ArrayList<>();
         Cells cell = availableCells.get(index);
         availableCells.remove(index);
         return cell;
-
-
     }
+
     public void npcMove(){
-        cellClicked(npcCellChoice());
+        if(currentPlayer == NPC)
+            cellClicked(npcCellChoice());
     }
-
 
     public void cellClicked(Cells cells){
         if (cells == FIRST && getFirstCell()== blank){
@@ -342,4 +333,64 @@ private final List <Cells> availableCells = new ArrayList<>();
         availableCells.remove(cells);
     }
 
+
+    public void isWinning(){
+        if (isCross());
+
+        else if (isCircle()) {
+
+        }
+    }
+    public boolean isCross(){
+        if (checkRows(cross))
+            return true;
+        else if (checkColumns(cross)) {
+            return true;
+        } else if (checkDiagonal(cross)) {
+            return true;
+        }
+        return false;
+
+    }
+
+    public boolean isCircle(){
+        if (checkRows(circle))
+            return true;
+        else if (checkColumns(circle)) {
+            return true;
+        } else if (checkDiagonal(circle)) {
+            return true;
+        }
+        return false;
+    }
+
+
+    private boolean checkRows(Image image) {
+        if (getFirstCell().equals(image) && getSecondCell().equals(image) && getThirdCell().equals(image)){
+          return true;
+        } else if (getFourthCell().equals(image) && getFifthCell().equals(image) && getSixthCell().equals(image)){
+            return true;
+        } else if (getSeventhCell().equals(image) && getEighthCell().equals(image) && getNinthCell().equals(image)) {
+            return true;
+        }
+        return false;
+    }
+    private boolean checkColumns(Image image) {
+        if (getFirstCell().equals(image) && getFourthCell().equals(image) && getSeventhCell().equals(image)){
+            return true;
+        } else if (getSecondCell().equals(image) && getFifthCell().equals(image) && getEighthCell().equals(image)){
+            return true;
+        } else if (getThirdCell().equals(image) && getSixthCell().equals(image) && getNinthCell().equals(image)) {
+            return true;
+        }
+        return false;
+    }
+    private boolean checkDiagonal(Image image) {
+    if (getFirstCell().equals(image) && getFifthCell().equals(image) && getNinthCell().equals(image)) {
+        return true;
+    } else if (getThirdCell().equals(image) && getFifthCell().equals(image) && getSeventhCell().equals(image)) {
+        return true;
+    }
+    return false;
+    }
 }
