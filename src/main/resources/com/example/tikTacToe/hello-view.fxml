@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox alignment="CENTER" spacing="20.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tikTacToe.controller.Controller">
+<Pane prefHeight="600.0" prefWidth="600.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tikTacToe.controller.Controller">
 
-    <BorderPane fx:id="pane2" maxHeight="-Infinity" maxWidth="-Infinity" stylesheets="css/styles.css">
+    <BorderPane fx:id="pane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="600" stylesheets="css/styles.css">
         <left>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="200.0" prefWidth="50.0" BorderPane.alignment="CENTER">
                 <children>
                     <Label alignment="CENTER_RIGHT" text="${controller.model.player1}" />
                     <Label alignment="CENTER_RIGHT" text="${controller.model.scoringP1}" />
@@ -16,7 +17,7 @@
             </VBox>
         </left>
         <right>
-            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="200.0" prefWidth="50.0" BorderPane.alignment="CENTER">
                 <children>
                     <Label alignment="CENTER_LEFT" text="${controller.model.player2}" />
                     <Label alignment="CENTER_LEFT" text="${controller.model.scoringP2}" />
@@ -26,45 +27,54 @@
 
 
         <center>
-            <GridPane alignment="CENTER" gridLinesVisible="true" BorderPane.alignment="CENTER">
+            <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="450.0" prefWidth="450.0" BorderPane.alignment="CENTER">
                 <columnConstraints>
-                  <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
-                  <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
-                  <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints maxWidth="-Infinity" minWidth="0.0" prefWidth="150.0" />
+                  <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                  <ColumnConstraints maxWidth="-Infinity" minWidth="0.0" prefWidth="150.0" />
               </columnConstraints>
                 <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="50.0" />
-                  <RowConstraints minHeight="10.0" prefHeight="50.0" />
-                  <RowConstraints minHeight="10.0" prefHeight="50.0" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="150.0" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="150.0" />
+                  <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="150.0" />
               </rowConstraints>
                 <children>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.firstCell}" onMouseClicked="#cellFirstClicked"
-                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.secondCell}" onMouseClicked="#cellSecondClicked"
-                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.thirdCell}" onMouseClicked="#cellThirdClicked"
-                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.fourthCell}" onMouseClicked="#cellFourthClicked"
-                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.fifthCell}" onMouseClicked="#cellFifthClicked"
-                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.sixthCell}" onMouseClicked="#cellSixthClicked"
-                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.seventhCell}" onMouseClicked="#cellSeventhClicked"
-                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.eighthCell}" onMouseClicked="#cellEighthClicked"
-                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                  </ImageView>
-                  <ImageView fitHeight="52.0" fitWidth="52.0" image="${controller.model.ninthCell}" onMouseClicked="#cellNinthClicked"
-                             pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                  </ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.firstCell}" onMouseClicked="#cellFirstClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin></ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.secondCell}" onMouseClicked="#cellSecondClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin></ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.thirdCell}" onMouseClicked="#cellThirdClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin></ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.fourthCell}" onMouseClicked="#cellFourthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin></ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.fifthCell}" onMouseClicked="#cellFifthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin></ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.sixthCell}" onMouseClicked="#cellSixthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin></ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.seventhCell}" onMouseClicked="#cellSeventhClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin></ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.eighthCell}" onMouseClicked="#cellEighthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin></ImageView>
+                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.ninthCell}" onMouseClicked="#cellNinthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                  <GridPane.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </GridPane.margin></ImageView>
               </children>
             </GridPane>
         </center>
@@ -77,11 +87,11 @@
           </HBox>
         </bottom>
         <top>
-          <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+          <HBox prefHeight="50.0" BorderPane.alignment="CENTER">
              <children>
                 <Label text="Label" />
             </children>
          </HBox>
       </top>
     </BorderPane>
-</HBox>
+</Pane>

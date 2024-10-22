@@ -62,6 +62,11 @@ public class Model {
         availableCells.addAll(Arrays.asList(FIRST,SECOND,THIRD,FOURTH,FIFTH,SIXTH,SEVENTH,EIGHTH,NINTH));
     }
 
+    public void update(){
+        npcMove();
+        isWinning();
+    }
+
 
     public String getPlayer1() {
         return player1.get();
@@ -331,16 +336,40 @@ public class Model {
             }
         }
         availableCells.remove(cells);
+        isWinning();
+
     }
 
+    public void resetBoard(){
+        availableCells.addAll(Arrays.asList(FIRST,SECOND,THIRD,FOURTH,FIFTH,SIXTH,SEVENTH,EIGHTH,NINTH));
+        setFirstCell(blank);
+        setSecondCell(blank);
+        setThirdCell(blank);
+        setFourthCell(blank);
+        setFifthCell(blank);
+        setSixthCell(blank);
+        setSeventhCell(blank);
+        setEighthCell(blank);
+        setNinthCell(blank);
+    }
 
     public void isWinning(){
-        if (isCross());
-
-        else if (isCircle()) {
-
+        if (isCross()) {
+            scoreP1++;
+            setScoringP1(scoreP1 + " Poäng");
+            resetBoard();
         }
+        else if (isCircle()) {
+            scoreP2++;
+            setScoringP2(scoreP2 + " Poäng");
+            resetBoard();
+        }
+        else if(availableCells.isEmpty()){
+            resetBoard();
+        }
+
     }
+
     public boolean isCross(){
         if (checkRows(cross))
             return true;
@@ -350,7 +379,6 @@ public class Model {
             return true;
         }
         return false;
-
     }
 
     public boolean isCircle(){
@@ -364,7 +392,6 @@ public class Model {
         return false;
     }
 
-
     private boolean checkRows(Image image) {
         if (getFirstCell().equals(image) && getSecondCell().equals(image) && getThirdCell().equals(image)){
           return true;
@@ -375,6 +402,7 @@ public class Model {
         }
         return false;
     }
+
     private boolean checkColumns(Image image) {
         if (getFirstCell().equals(image) && getFourthCell().equals(image) && getSeventhCell().equals(image)){
             return true;
@@ -385,6 +413,7 @@ public class Model {
         }
         return false;
     }
+
     private boolean checkDiagonal(Image image) {
     if (getFirstCell().equals(image) && getFifthCell().equals(image) && getNinthCell().equals(image)) {
         return true;
