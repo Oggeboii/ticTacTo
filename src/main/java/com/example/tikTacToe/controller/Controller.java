@@ -6,9 +6,12 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Cell;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Duration;
+
 
 import static com.example.tikTacToe.Cells.*;
 
@@ -22,7 +25,7 @@ public class Controller {
                 new KeyFrame(
                         Duration.millis(Math.random()*3000),
                         (ActionEvent event) ->{
-                            model.npcMove();
+                            model.update();
                             Controller.this.startRandomEvent();
                         }
                 )
@@ -35,6 +38,9 @@ public class Controller {
 
     public Model getModel() {
         return model;
+    }
+    public void playAgainClicked(MouseEvent mouseEvent) {
+        model.playAgain = true;
     }
 
     public void cellFirstClicked(MouseEvent mouseEvent) {

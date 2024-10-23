@@ -1,10 +1,9 @@
 package com.example.tikTacToe.model;
 
 import com.example.tikTacToe.Cells;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;
@@ -18,6 +17,9 @@ import static com.example.tikTacToe.model.Player.*;
 public class Model {
     Random rand = new Random();
     private final List <Cells> availableCells = new ArrayList<>();
+    private ListProperty<Image> images = new SimpleListProperty<>(FXCollections.observableArrayList());
+
+    public boolean playAgain = false;
 
     private int scoreP1 = 0;
     private int scoreP2 = 0;
@@ -33,16 +35,6 @@ public class Model {
     Image blank;
     Image circle;
 
-    ObjectProperty<Image> firstCell;
-    ObjectProperty<Image> secondCell;
-    ObjectProperty<Image> thirdCell;
-    ObjectProperty<Image> fourthCell;
-    ObjectProperty<Image> fifthCell;
-    ObjectProperty<Image> sixthCell;
-    ObjectProperty<Image> seventhCell;
-    ObjectProperty<Image> eighthCell;
-    ObjectProperty<Image> ninthCell;
-
     public Model() {
         currentPlayer = PLAYER1;
 
@@ -50,16 +42,30 @@ public class Model {
         circle = new Image(getClass().getResource("/com/example/tikTacToe/images/circle.png").toExternalForm());
         blank = new Image(getClass().getResource("/com/example/tikTacToe/images/blank.png").toExternalForm());
 
-        firstCell = new SimpleObjectProperty<>(blank);
-        secondCell = new SimpleObjectProperty<>(blank);
-        thirdCell = new SimpleObjectProperty<>(blank);
-        fourthCell = new SimpleObjectProperty<>(blank);
-        fifthCell = new SimpleObjectProperty<>(blank);
-        sixthCell = new SimpleObjectProperty<>(blank);
-        seventhCell = new SimpleObjectProperty<>(blank);
-        eighthCell = new SimpleObjectProperty<>(blank);
-        ninthCell = new SimpleObjectProperty<>(blank);
+        images.addFirst(blank);
+        images.add(1,blank);
+        images.add(2,blank);
+        images.add(3,blank);
+        images.add(4,blank);
+        images.add(5,blank);
+        images.add(6,blank);
+        images.add(7,blank);
+        images.add(8,blank);
+
         availableCells.addAll(Arrays.asList(FIRST,SECOND,THIRD,FOURTH,FIFTH,SIXTH,SEVENTH,EIGHTH,NINTH));
+    }
+
+
+    public ObservableList<Image> getImages() {
+        return images.get();
+    }
+
+    public ListProperty<Image> imagesProperty() {
+        return images;
+    }
+
+    public void setImages(ObservableList<Image> images) {
+        this.images.set(images);
     }
 
     public void update(){
@@ -116,114 +122,6 @@ public class Model {
         this.scoringP2.set(scoringP2);
     }
 
-    public Image getFirstCell() {
-        return firstCell.get();
-    }
-
-    public ObjectProperty<Image> firstCellProperty() {
-        return firstCell;
-    }
-
-    public void setFirstCell(Image firstCell) {
-        this.firstCell.set(firstCell);
-    }
-
-    public Image getSecondCell() {
-        return secondCell.get();
-    }
-
-    public ObjectProperty<Image> secondCellProperty() {
-        return secondCell;
-    }
-
-    public void setSecondCell(Image secondCell) {
-        this.secondCell.set(secondCell);
-    }
-
-    public Image getThirdCell() {
-        return thirdCell.get();
-    }
-
-    public ObjectProperty<Image> thirdCellProperty() {
-        return thirdCell;
-    }
-
-    public void setThirdCell(Image thirdCell) {
-        this.thirdCell.set(thirdCell);
-    }
-
-    public Image getFourthCell() {
-        return fourthCell.get();
-    }
-
-    public ObjectProperty<Image> fourthCellProperty() {
-        return fourthCell;
-    }
-
-    public void setFourthCell(Image fourthCell) {
-        this.fourthCell.set(fourthCell);
-    }
-
-    public Image getFifthCell() {
-        return fifthCell.get();
-    }
-
-    public ObjectProperty<Image> fifthCellProperty() {
-        return fifthCell;
-    }
-
-    public void setFifthCell(Image fifthCell) {
-        this.fifthCell.set(fifthCell);
-    }
-
-    public Image getSixthCell() {
-        return sixthCell.get();
-    }
-
-    public ObjectProperty<Image> sixthCellProperty() {
-        return sixthCell;
-    }
-
-    public void setSixthCell(Image sixthCell) {
-        this.sixthCell.set(sixthCell);
-    }
-
-    public Image getSeventhCell() {
-        return seventhCell.get();
-    }
-
-    public ObjectProperty<Image> seventhCellProperty() {
-        return seventhCell;
-    }
-
-    public void setSeventhCell(Image seventhCell) {
-        this.seventhCell.set(seventhCell);
-    }
-
-    public Image getEighthCell() {
-        return eighthCell.get();
-    }
-
-    public ObjectProperty<Image> eighthCellProperty() {
-        return eighthCell;
-    }
-
-    public void setEighthCell(Image eighthCell) {
-        this.eighthCell.set(eighthCell);
-    }
-
-    public Image getNinthCell() {
-        return ninthCell.get();
-    }
-
-    public ObjectProperty<Image> ninthCellProperty() {
-        return ninthCell;
-    }
-
-    public void setNinthCell(Image ninthCell) {
-        this.ninthCell.set(ninthCell);
-    }
-
     public Cells npcCellChoice() {
 
         int index = rand.nextInt(availableCells.size());
@@ -232,106 +130,107 @@ public class Model {
         return cell;
     }
 
+
     public void npcMove(){
         if(currentPlayer == NPC)
             cellClicked(npcCellChoice());
     }
 
     public void cellClicked(Cells cells){
-        if (cells == FIRST && getFirstCell()== blank){
+        if (cells == FIRST && images.getFirst()== blank){
             if(currentPlayer == PLAYER1) {
-                setFirstCell(cross);
+                images.set(0,cross);
                 currentPlayer = NPC;
             }
             else if(currentPlayer == NPC){
-                setFirstCell(circle);
+                images.set(0,circle);
                 currentPlayer = PLAYER1;
             }
         }
 
-        else if(cells == Cells.SECOND && getSecondCell()== blank){
+        else if(cells == SECOND && images.get(1)== blank){
             if(currentPlayer == PLAYER1) {
-                setSecondCell(cross);
+                images.set(1,cross);
                 currentPlayer = NPC;
             }
             else if(currentPlayer == NPC){
-                setSecondCell(circle);
+                images.set(1,circle);
                 currentPlayer = PLAYER1;
             }
         }
 
-        else if(cells == Cells.THIRD && getThirdCell()== blank){
+        else if(cells == THIRD && images.get(2)== blank){
             if(currentPlayer == PLAYER1) {
-                setThirdCell(cross);
+                images.set(2,cross);
                 currentPlayer = NPC;
             }
             else if(currentPlayer == NPC){
-                setThirdCell(circle);
+                images.set(2,circle);
                 currentPlayer = PLAYER1;
             }
         }
 
-        else if(cells == Cells.FOURTH && getFourthCell()== blank){
+        else if(cells == FOURTH && images.get(3)== blank){
             if (currentPlayer == PLAYER1) {
-                setFourthCell(cross);
+                images.set(3,cross);
                 currentPlayer = NPC;
             }
             else if (currentPlayer == NPC){
-                setFourthCell(circle);
+                images.set(3,circle);
                 currentPlayer = PLAYER1;
             }
         }
 
-        else if(cells == Cells.FIFTH && getFifthCell()== blank){
+        else if(cells == FIFTH && images.get(4)== blank){
             if (currentPlayer == PLAYER1) {
-                setFifthCell(cross);
+                images.set(4,cross);
                 currentPlayer = NPC;
             }
             else if (currentPlayer == NPC){
-                setFifthCell(circle);
+                images.set(4,circle);
                 currentPlayer = PLAYER1;
             }
         }
 
-        else if(cells == Cells.SIXTH && getSixthCell()== blank){
+        else if(cells == SIXTH && images.get(5)== blank){
             if (currentPlayer == PLAYER1) {
-                setSixthCell(cross);
+                images.set(5,cross);
                 currentPlayer = NPC;
             }
             else if (currentPlayer == NPC){
-                setSixthCell(circle);
+                images.set(5,circle);
                 currentPlayer = PLAYER1;
             }
         }
 
-        else if(cells == Cells.SEVENTH && getSeventhCell()== blank){
+        else if(cells == SEVENTH && images.get(6)== blank){
             if (currentPlayer == PLAYER1) {
-                setSeventhCell(cross);
+                images.set(6,cross);
                 currentPlayer = NPC;
             }
             else if (currentPlayer == NPC){
-                setSeventhCell(circle);
+                images.set(6,circle);
                 currentPlayer = PLAYER1;
             }
         }
 
-        else if(cells == Cells.EIGHTH && getEighthCell()== blank){
+        else if(cells == EIGHTH && images.get(7)== blank){
             if (currentPlayer == PLAYER1) {
-                setEighthCell(cross);
+                images.set(7,cross);
                 currentPlayer = NPC;
             }
             else if (currentPlayer == NPC){
-                setEighthCell(circle);
+                images.set(7,circle);
                 currentPlayer = PLAYER1;
             }
         }
-        else if(cells == Cells.NINTH && getNinthCell()== blank){
+        else if(cells == NINTH && images.get(8)== blank){
             if (currentPlayer == PLAYER1) {
-                setNinthCell(cross);
+                images.set(8,cross);
                 currentPlayer = NPC;
             }
             else if (currentPlayer == NPC){
-                setNinthCell(circle);
+                images.set(8,circle);
                 currentPlayer = PLAYER1;
             }
         }
@@ -341,16 +240,19 @@ public class Model {
     }
 
     public void resetBoard(){
-        availableCells.addAll(Arrays.asList(FIRST,SECOND,THIRD,FOURTH,FIFTH,SIXTH,SEVENTH,EIGHTH,NINTH));
-        setFirstCell(blank);
-        setSecondCell(blank);
-        setThirdCell(blank);
-        setFourthCell(blank);
-        setFifthCell(blank);
-        setSixthCell(blank);
-        setSeventhCell(blank);
-        setEighthCell(blank);
-        setNinthCell(blank);
+        if (playAgain) {
+            availableCells.addAll(Arrays.asList(FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH));
+            images.set(0, blank);
+            images.set(1, blank);
+            images.set(2, blank);
+            images.set(3, blank);
+            images.set(4, blank);
+            images.set(5, blank);
+            images.set(6, blank);
+            images.set(7, blank);
+            images.set(8, blank);
+            playAgain = false;
+        }
     }
 
     public void isWinning(){
@@ -393,31 +295,31 @@ public class Model {
     }
 
     private boolean checkRows(Image image) {
-        if (getFirstCell().equals(image) && getSecondCell().equals(image) && getThirdCell().equals(image)){
+        if (images.getFirst().equals(image) && images.get(1).equals(image) && images.get(2).equals(image)){
           return true;
-        } else if (getFourthCell().equals(image) && getFifthCell().equals(image) && getSixthCell().equals(image)){
+        } else if (images.get(3).equals(image) && images.get(4).equals(image) && images.get(5).equals(image)){
             return true;
-        } else if (getSeventhCell().equals(image) && getEighthCell().equals(image) && getNinthCell().equals(image)) {
+        } else if (images.get(6).equals(image) && images.get(7).equals(image) && images.get(8).equals(image)){
             return true;
         }
         return false;
     }
 
     private boolean checkColumns(Image image) {
-        if (getFirstCell().equals(image) && getFourthCell().equals(image) && getSeventhCell().equals(image)){
+        if (images.get(0).equals(image) && images.get(3).equals(image) && images.get(6).equals(image)){
             return true;
-        } else if (getSecondCell().equals(image) && getFifthCell().equals(image) && getEighthCell().equals(image)){
+        } else if (images.get(1).equals(image) && images.get(4).equals(image) && images.get(7).equals(image)){
             return true;
-        } else if (getThirdCell().equals(image) && getSixthCell().equals(image) && getNinthCell().equals(image)) {
+        } else if (images.get(2).equals(image) && images.get(5).equals(image) && images.get(8).equals(image)){
             return true;
         }
         return false;
     }
 
     private boolean checkDiagonal(Image image) {
-    if (getFirstCell().equals(image) && getFifthCell().equals(image) && getNinthCell().equals(image)) {
+    if (images.get(0).equals(image) && images.get(4).equals(image) && images.get(8).equals(image)){
         return true;
-    } else if (getThirdCell().equals(image) && getFifthCell().equals(image) && getSeventhCell().equals(image)) {
+    } else if (images.get(2).equals(image) && images.get(4).equals(image) && images.get(6).equals(image)){
         return true;
     }
     return false;
