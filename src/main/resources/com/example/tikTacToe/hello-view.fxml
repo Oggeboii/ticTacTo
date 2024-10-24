@@ -5,93 +5,111 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="600.0" prefWidth="600.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tikTacToe.controller.Controller">
-
-
-    <BorderPane fx:id="pane2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="600" stylesheets="css/styles.css">
-        <left>
-            <VBox prefHeight="200.0" prefWidth="50.0" BorderPane.alignment="CENTER">
-                <children>
-                    <Label alignment="CENTER_RIGHT" text="${controller.model.player1}" />
-                    <Label alignment="CENTER_RIGHT" text="${controller.model.scoringP1}" />
-                </children>
-            </VBox>
-        </left>
-        <right>
-            <VBox prefHeight="200.0" prefWidth="50.0" BorderPane.alignment="CENTER">
-                <children>
-                    <Label alignment="CENTER_LEFT" text="${controller.model.player2}" />
-                    <Label alignment="CENTER_LEFT" text="${controller.model.scoringP2}" />
-                </children>
-            </VBox>
-        </right>
-
-        <center>
-            <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="450.0" prefWidth="450.0" BorderPane.alignment="CENTER">
-                <columnConstraints>
-                  <ColumnConstraints maxWidth="-Infinity" minWidth="0.0" prefWidth="150.0" />
-                  <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
-                  <ColumnConstraints maxWidth="-Infinity" minWidth="0.0" prefWidth="150.0" />
-              </columnConstraints>
-                <rowConstraints>
-                  <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="150.0" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="150.0" />
-                  <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="150.0" />
-              </rowConstraints>
-                <children>
-                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[0]}" onMouseClicked="#cellFirstClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></ImageView>
-                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[1]}" onMouseClicked="#cellSecondClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></ImageView>
-                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[2]}" onMouseClicked="#cellThirdClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></ImageView>
-                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[3]}" onMouseClicked="#cellFourthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></ImageView>
-                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[4]}" onMouseClicked="#cellFifthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></ImageView>
-                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[5]}" onMouseClicked="#cellSixthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></ImageView>
-                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[6]}" onMouseClicked="#cellSeventhClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></ImageView>
-                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[7]}" onMouseClicked="#cellEighthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></ImageView>
-                  <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[8]}" onMouseClicked="#cellNinthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                  <GridPane.margin>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </GridPane.margin></ImageView>
-              </children>
-            </GridPane>
-        </center>
-        <bottom>
-            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="550.0" BorderPane.alignment="BOTTOM_CENTER">
+<Pane prefHeight="700.0" prefWidth="700.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tikTacToe.controller.Controller">
+   <StackPane prefHeight="700.0" prefWidth="700.0">
+      <children>
+          <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700" prefWidth="700" stylesheets="css/styles.css">
+              <left>
+                  <VBox prefHeight="200.0" prefWidth="75.0" BorderPane.alignment="CENTER">
+                      <children>
+                          <Label alignment="CENTER" text="${controller.model.player1}" />
+                          <Label alignment="CENTER" text="${controller.model.scoringP1}" />
+                      </children>
+                  </VBox>
+              </left>
+              <right>
+                  <VBox prefHeight="200.0" prefWidth="75.0" BorderPane.alignment="CENTER">
+                      <children>
+                          <Label alignment="CENTER" text="${controller.model.player2}" />
+                          <Label alignment="CENTER" text="${controller.model.scoringP2}" />
+                      </children>
+                  </VBox>
+              </right>
+      
+              <center>
+                  <GridPane alignment="CENTER" gridLinesVisible="true" prefHeight="450.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+                      <columnConstraints>
+                        <ColumnConstraints maxWidth="-Infinity" minWidth="0.0" prefWidth="150.0" />
+                        <ColumnConstraints maxWidth="-Infinity" minWidth="10.0" prefWidth="150.0" />
+                        <ColumnConstraints maxWidth="-Infinity" minWidth="0.0" prefWidth="150.0" />
+                    </columnConstraints>
+                      <rowConstraints>
+                        <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="150.0" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="150.0" />
+                        <RowConstraints maxHeight="-Infinity" minHeight="0.0" prefHeight="150.0" />
+                    </rowConstraints>
+                      <children>
+                        <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[0]}" onMouseClicked="#cellFirstClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[1]}" onMouseClicked="#cellSecondClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[2]}" onMouseClicked="#cellThirdClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[3]}" onMouseClicked="#cellFourthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[4]}" onMouseClicked="#cellFifthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[5]}" onMouseClicked="#cellSixthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[6]}" onMouseClicked="#cellSeventhClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[7]}" onMouseClicked="#cellEighthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </ImageView>
+                        <ImageView fitHeight="140.0" fitWidth="160.0" image="${controller.model.images[8]}" onMouseClicked="#cellNinthClicked" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <GridPane.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </GridPane.margin>
+                     </ImageView>
+                    </children>
+                  </GridPane>
+              </center>
+              <bottom>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="550.0" BorderPane.alignment="BOTTOM_CENTER">
+                    <children>
+                        <Button alignment="CENTER_LEFT" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#playAgainClicked" text="Play again" />
+                       <Button alignment="CENTER_RIGHT" layoutY="550.0" mnemonicParsing="false" text="Quit" />
+                   </children>
+                </HBox>
+              </bottom>
+              <top>
+                <HBox alignment="CENTER" prefHeight="50.0" BorderPane.alignment="CENTER">
+                   <children>
+                      <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="Label" />
+                  </children>
+               </HBox>
+            </top>
+          </BorderPane>
+          <HBox fx:id="paneMenu" alignment="CENTER" prefHeight="700.0" prefWidth="700.0" StackPane.alignment="TOP_CENTER" stylesheets="css/styles.css" >
               <children>
-                  <Button alignment="CENTER_LEFT" layoutY="550.0" mnemonicParsing="false" text="Play again" onMouseClicked="#playAgainClicked"  />
-                 <Button alignment="CENTER_RIGHT" layoutY="550.0" mnemonicParsing="false" text="Quit" />
-             </children>
+                  <Button mnemonicParsing="false" text="Player vs NPC" onMouseClicked="#playerVsNPCClicked"/>
+                  <Button mnemonicParsing="false" text="Player vs Player (local)" />
+                  <Button mnemonicParsing="false" text="Player vs Player (online)" />
+              </children>
           </HBox>
-        </bottom>
-        <top>
-          <HBox alignment="CENTER" prefHeight="50.0" BorderPane.alignment="CENTER">
-             <children>
-                <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="Label" />
-            </children>
-         </HBox>
-      </top>
-    </BorderPane>
+      </children>
+   </StackPane>
 </Pane>

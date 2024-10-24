@@ -10,12 +10,17 @@ import javafx.scene.control.Cell;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
 
 import static com.example.tikTacToe.Cells.*;
 
 public class Controller {
+    public BorderPane root;
+    public HBox paneMenu;
+
     public void initialize() {
         startRandomEvent();
 
@@ -23,7 +28,7 @@ public class Controller {
     private void startRandomEvent(){
         Timeline timeline = new Timeline(
                 new KeyFrame(
-                        Duration.millis(Math.random()*3000),
+                        Duration.millis(Math.random()*1000),
                         (ActionEvent event) ->{
                             model.update();
                             Controller.this.startRandomEvent();
@@ -39,8 +44,12 @@ public class Controller {
     public Model getModel() {
         return model;
     }
+    public void playerVsNPCClicked(MouseEvent mouseEvent) {
+        paneMenu.setVisible(false);
+    }
+
     public void playAgainClicked(MouseEvent mouseEvent) {
-        model.playAgain = true;
+        model.playAgain();
     }
 
     public void cellFirstClicked(MouseEvent mouseEvent) {

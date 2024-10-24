@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="is winning is working, fine tuning visuals">
+    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="Made a list for images instead fo connection the to the cells">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +139,8 @@
       <workItem from="1729505521767" duration="6317000" />
       <workItem from="1729580088504" duration="8000" />
       <workItem from="1729587279616" duration="5803000" />
-      <workItem from="1729668381664" duration="14067000" />
+      <workItem from="1729668381664" duration="16496000" />
+      <workItem from="1729754658162" duration="7217000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -180,7 +184,14 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1729602933803</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="Made a list for images instead fo connection the to the cells">
+      <option name="closed" value="true" />
+      <created>1729687104965</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1729687104965</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,7 +204,25 @@
     <MESSAGE value="made the npc writeout it's moves" />
     <MESSAGE value="check for winning conditions" />
     <MESSAGE value="is winning is working, fine tuning visuals" />
-    <option name="LAST_COMMIT_MESSAGE" value="is winning is working, fine tuning visuals" />
+    <MESSAGE value="Made a list for images instead fo connection the to the cells" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made a list for images instead fo connection the to the cells" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.example.tikTacToe.model.Model" memberName="scoreP1" />
+        <PinnedItemInfo parentTag="com.example.tikTacToe.model.Model" memberName="scoreP2" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
