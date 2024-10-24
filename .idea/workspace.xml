@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="Made a list for images instead fo connection the to the cells">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/GameState.java" afterDir="false" />
+    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="game against NPC completed with score count and option to play again. Started implementing menu system">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +137,7 @@
       <workItem from="1729580088504" duration="8000" />
       <workItem from="1729587279616" duration="5803000" />
       <workItem from="1729668381664" duration="16496000" />
-      <workItem from="1729754658162" duration="7217000" />
+      <workItem from="1729754658162" duration="12932000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -191,7 +188,14 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1729687104965</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="game against NPC completed with score count and option to play again. Started implementing menu system">
+      <option name="closed" value="true" />
+      <created>1729762516366</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1729762516366</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,15 +209,16 @@
     <MESSAGE value="check for winning conditions" />
     <MESSAGE value="is winning is working, fine tuning visuals" />
     <MESSAGE value="Made a list for images instead fo connection the to the cells" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made a list for images instead fo connection the to the cells" />
+    <MESSAGE value="game against NPC completed with score count and option to play again. Started implementing menu system" />
+    <option name="LAST_COMMIT_MESSAGE" value="game against NPC completed with score count and option to play again. Started implementing menu system" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="3" />
+          <line>131</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

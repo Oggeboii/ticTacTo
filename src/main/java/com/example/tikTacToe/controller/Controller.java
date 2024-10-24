@@ -46,10 +46,15 @@ public class Controller {
     }
     public void playerVsNPCClicked(MouseEvent mouseEvent) {
         paneMenu.setVisible(false);
+        model.playerVsNPC();
     }
 
     public void playAgainClicked(MouseEvent mouseEvent) {
         model.playAgain();
+    }
+    public void backToMenuClicked(MouseEvent mouseEvent) {
+        paneMenu.setVisible(true);
+        model.resetAll();
     }
 
     public void cellFirstClicked(MouseEvent mouseEvent) {

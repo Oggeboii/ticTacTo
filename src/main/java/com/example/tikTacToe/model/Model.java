@@ -1,15 +1,10 @@
 package com.example.tikTacToe.model;
 
 import com.example.tikTacToe.Cells;
-import com.example.tikTacToe.controller.Controller;
 import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.geometry.Pos;
 import javafx.scene.image.Image;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,22 +20,24 @@ public class Model {
     private final List<Cells> availableCells = new ArrayList<>();
     private ListProperty<Image> images = new SimpleListProperty<>(FXCollections.observableArrayList());
 
-    GameState gameState = RUNNING;
+    GameState gameState = PAUSED;
 
     private int scoreP1 = 0;
-    private int scoreP2 = 0;
+    private int scoreOpponent = 0;
+
+    private StringProperty winner = new SimpleStringProperty("");
 
     private StringProperty player1 = new SimpleStringProperty("Player1");
-    private StringProperty player2 = new SimpleStringProperty("Player2");
 
+    private StringProperty opponent = new SimpleStringProperty("Player2");
     private Player currentPlayer;
-    private final StringProperty scoringP1 = new SimpleStringProperty("0 Poäng");
-    private final StringProperty scoringP2 = new SimpleStringProperty("0 Poäng");
 
+    private final StringProperty scoringP1 = new SimpleStringProperty("0 Poäng");
+    private final StringProperty scoringOpponent = new SimpleStringProperty("0 Poäng");
     Image cross;
+
     Image blank;
     Image circle;
-
     public Model() {
         currentPlayer = PLAYER1;
 
@@ -62,10 +59,6 @@ public class Model {
     }
 
 
-    public void playerVsNPC(){
-
-    }
-
 
     public ObservableList<Image> getImages() {
         return images.get();
@@ -79,7 +72,6 @@ public class Model {
         this.images.set(images);
     }
 
-
     public String getPlayer1() {
         return player1.get();
     }
@@ -92,16 +84,16 @@ public class Model {
         this.player1.set(player1);
     }
 
-    public String getPlayer2() {
-        return player2.get();
+    public String getOpponent() {
+        return opponent.get();
     }
 
-    public StringProperty player2Property() {
-        return player2;
+    public StringProperty opponentProperty() {
+        return opponent;
     }
 
-    public void setPlayer2(String player2) {
-        this.player2.set(player2);
+    public void setOpponent(String opponent) {
+        this.opponent.set(opponent);
     }
 
     public String getScoringP1() {
@@ -116,19 +108,61 @@ public class Model {
         this.scoringP1.set(scoringP1);
     }
 
-    public String getScoringP2() {
-        return scoringP2.get();
+    public String getScoringOpponent() {
+        return scoringOpponent.get();
     }
 
-    public StringProperty scoringP2Property() {
-        return scoringP2;
+    public StringProperty scoringOpponentProperty() {
+        return scoringOpponent;
     }
 
-    public void setScoringP2(String scoringP2) {
-        this.scoringP2.set(scoringP2);
+    public void setScoringOpponent(String scoringOpponent) {
+        this.scoringOpponent.set(scoringOpponent);
+    }
+
+    public String getWinner() {
+        return winner.get();
+    }
+
+    public StringProperty winnerProperty() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner.set(winner);
+    }
+
+    public void playerVsNPC(){
+        currentPlayer = PLAYER1;
+        setOpponent("NPC");
+        gameState = RUNNING;
+    }
+
+    public void resetAll(){
+        gameState = PAUSED;
+        scoreP1 = 0;
+        scoreOpponent = 0;
+        setScoringP1(scoreP1 + " Poäng");
+        setScoringOpponent(scoreOpponent + " Poäng");
+        availableCells.clear();
+        resetBoard();
+    }
+
+    public void resetBoard() {
+        availableCells.addAll(Arrays.asList(FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH));
+        images.set(0, blank);
+        images.set(1, blank);
+        images.set(2, blank);
+        images.set(3, blank);
+        images.set(4, blank);
+        images.set(5, blank);
+        images.set(6, blank);
+        images.set(7, blank);
+        images.set(8, blank);
     }
 
     public void playAgain() {
+        setWinner("");
         resetBoard();
         gameState = RUNNING;
     }
@@ -137,6 +171,7 @@ public class Model {
         if(gameState == RUNNING) {
             isWinning();
             npcMove();
+            isWinning();
         }
     }
 
@@ -148,14 +183,14 @@ public class Model {
         return cell;
     }
 
-
     public void npcMove() {
-        if (currentPlayer == NPC)
+        if (currentPlayer == NPC && gameState == RUNNING)
             cellClicked(npcCellChoice());
     }
 
     public void cellClicked(Cells cells) {
         if (gameState == RUNNING) {
+
             if (cells == FIRST && images.getFirst() == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(0, cross);
@@ -233,31 +268,21 @@ public class Model {
         }
     }
 
-    public void resetBoard() {
-        availableCells.addAll(Arrays.asList(FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH));
-        images.set(0, blank);
-        images.set(1, blank);
-        images.set(2, blank);
-        images.set(3, blank);
-        images.set(4, blank);
-        images.set(5, blank);
-        images.set(6, blank);
-        images.set(7, blank);
-        images.set(8, blank);
-    }
-
     public void isWinning() {
         if (isCross()) {
             gameState = PAUSED;
             scoreP1 = scoreP1 +1;
             setScoringP1(scoreP1 + " Poäng");
+            setWinner(getPlayer1() + " Won!");
         }
         else if (isCircle()) {
             gameState = PAUSED;
-            scoreP2 = scoreP2 +1;
-            setScoringP2(scoreP2 + " Poäng");
+            scoreOpponent = scoreOpponent +1;
+            setScoringOpponent(scoreOpponent + " Poäng");
+            setWinner(getOpponent() +" Won!");
         }
         else if (availableCells.isEmpty()) {
+            setWinner("DRAW!");
             gameState = PAUSED;
         }
     }
