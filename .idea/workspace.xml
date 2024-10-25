@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="game against NPC completed with score count and option to play again. Started implementing menu system">
+    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" afterDir="false" />
@@ -55,32 +57,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tikTacTo [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tikTacTo [org.openjfx:javafx-maven-plugin:0.0.8:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.tikTacTo [package].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/0skar/IdeaProjects/labb/tikTacTo/src/main/resources/com/example/tikTacToe/images&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "JUnit.ModelTest.executor": "Run",
+    "JUnit.ModelTest.whenCreatingModelThenGameStateIsPaused.executor": "Run",
+    "Maven.tikTacTo [org.openjfx:javafx-maven-plugin:0.0.8:jlink].executor": "Run",
+    "Maven.tikTacTo [org.openjfx:javafx-maven-plugin:0.0.8:run].executor": "Run",
+    "Maven.tikTacTo [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/0skar/IdeaProjects/labb/tikTacTo/src",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\0skar\IdeaProjects\labb\tikTacTo\src" />
       <recent name="C:\Users\0skar\IdeaProjects\labb\tikTacTo\src\main\resources\com\example\tikTacToe\images" />
       <recent name="C:\Users\0skar\IdeaProjects\labb\tikTacTo\src\main\resources\com\example\tiktacto\images" />
     </key>
@@ -88,7 +93,7 @@
       <recent name="C:\Users\0skar\IdeaProjects\labb\tikTacTo\src\main\resources\com\example\tiktacto\css" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ModelTest">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.tikTacToe.HelloApplication" />
       <module name="tikTacTo" />
@@ -102,8 +107,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tikTacTo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.tikTacToe.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.tikTacToe.model" />
+      <option name="MAIN_CLASS_NAME" value="com.example.tikTacToe.model.ModelTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ModelTest.whenCreatingModelThenGameStateIsPaused" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tikTacTo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.tikTacToe.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.tikTacToe.model" />
+      <option name="MAIN_CLASS_NAME" value="com.example.tikTacToe.model.ModelTest" />
+      <option name="METHOD_NAME" value="whenCreatingModelThenGameStateIsPaused" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ModelTest" />
+        <item itemvalue="JUnit.ModelTest.whenCreatingModelThenGameStateIsPaused" />
         <item itemvalue="Application.HelloApplication" />
       </list>
     </recent_temporary>
@@ -137,7 +175,8 @@
       <workItem from="1729580088504" duration="8000" />
       <workItem from="1729587279616" duration="5803000" />
       <workItem from="1729668381664" duration="16496000" />
-      <workItem from="1729754658162" duration="12932000" />
+      <workItem from="1729754658162" duration="15793000" />
+      <workItem from="1729854659079" duration="3795000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -195,7 +234,14 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1729762516366</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="resets game when moving between playing vs npc and menu">
+      <option name="closed" value="true" />
+      <created>1729769982897</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1729769982897</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,18 +256,10 @@
     <MESSAGE value="is winning is working, fine tuning visuals" />
     <MESSAGE value="Made a list for images instead fo connection the to the cells" />
     <MESSAGE value="game against NPC completed with score count and option to play again. Started implementing menu system" />
-    <option name="LAST_COMMIT_MESSAGE" value="game against NPC completed with score count and option to play again. Started implementing menu system" />
+    <MESSAGE value="resets game when moving between playing vs npc and menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="resets game when moving between playing vs npc and menu" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="com.example.tikTacToe.model.Model" memberName="scoreP1" />

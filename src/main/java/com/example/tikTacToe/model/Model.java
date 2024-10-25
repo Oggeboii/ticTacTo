@@ -340,4 +340,7 @@ public class Model {
         return false;
     }
 
+    public GameState getGameState() {
+        return gameState;
+    }
 }

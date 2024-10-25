@@ -98,16 +98,17 @@
               <top>
                 <HBox alignment="CENTER" prefHeight="50.0" BorderPane.alignment="CENTER">
                    <children>
-                      <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="${controller.model.winner}"/>
+                      <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="${controller.model.winner}" />
                   </children>
                </HBox>
             </top>
           </BorderPane>
-          <HBox fx:id="paneMenu" alignment="CENTER" prefHeight="700.0" prefWidth="700.0" StackPane.alignment="TOP_CENTER" stylesheets="css/styles.css" >
+
+          <HBox fx:id="paneMenu" alignment="CENTER" prefHeight="350.0" prefWidth="700.0" stylesheets="css/styles.css">
               <children>
-                  <Button mnemonicParsing="false" text="Player vs NPC" onMouseClicked="#playerVsNPCClicked"/>
-                  <Button mnemonicParsing="false" text="Player vs Player (local)" />
-                  <Button mnemonicParsing="false" text="Player vs Player (online)" />
+                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#playerVsNPCClicked" text="Player vs NPC" />
+                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Player vs Player (local)" />
+                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Player vs Player (online)" />
               </children>
           </HBox>
       </children>
