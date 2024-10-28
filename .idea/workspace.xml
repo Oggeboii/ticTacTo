@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/tikTacToe/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/tikTacToe/hello-view.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="6184f602-f95d-40f1-8dac-57dd10906779" name="Changes" comment="started working on test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,7 +169,7 @@
       <workItem from="1729587279616" duration="5803000" />
       <workItem from="1729668381664" duration="16496000" />
       <workItem from="1729754658162" duration="15793000" />
-      <workItem from="1729854659079" duration="3795000" />
+      <workItem from="1729854659079" duration="3913000" />
     </task>
     <task id="LOCAL−00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -241,7 +234,14 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1729769982897</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="started working on test">
+      <option name="closed" value="true" />
+      <created>1729858573181</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1729858573182</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +257,8 @@
     <MESSAGE value="Made a list for images instead fo connection the to the cells" />
     <MESSAGE value="game against NPC completed with score count and option to play again. Started implementing menu system" />
     <MESSAGE value="resets game when moving between playing vs npc and menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="resets game when moving between playing vs npc and menu" />
+    <MESSAGE value="started working on test" />
+    <option name="LAST_COMMIT_MESSAGE" value="started working on test" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
