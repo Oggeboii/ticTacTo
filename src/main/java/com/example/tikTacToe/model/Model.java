@@ -30,9 +30,11 @@ public class Model {
     private StringProperty player1 = new SimpleStringProperty("Player1");
 
     private StringProperty opponent = new SimpleStringProperty("Player2");
+
     private Player currentPlayer;
 
     private final StringProperty scoringP1 = new SimpleStringProperty("0 Poäng");
+
     private final StringProperty scoringOpponent = new SimpleStringProperty("0 Poäng");
     Image cross;
 
@@ -57,7 +59,6 @@ public class Model {
 
         availableCells.addAll(Arrays.asList(FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH));
     }
-
 
 
     public ObservableList<Image> getImages() {
@@ -120,6 +121,14 @@ public class Model {
         this.scoringOpponent.set(scoringOpponent);
     }
 
+    public Player getCurrentPlayer() {
+        return currentPlayer;
+    }
+
+    public void setCurrentPlayer(Player currentPlayer) {
+        this.currentPlayer = currentPlayer;
+    }
+
     public String getWinner() {
         return winner.get();
     }
@@ -132,13 +141,13 @@ public class Model {
         this.winner.set(winner);
     }
 
-    public void playerVsNPC(){
+    public void playerVsNPC() {
         currentPlayer = PLAYER1;
         setOpponent("NPC");
         gameState = RUNNING;
     }
 
-    public void resetAll(){
+    public void resetAll() {
         gameState = PAUSED;
         scoreP1 = 0;
         scoreOpponent = 0;
@@ -168,10 +177,9 @@ public class Model {
     }
 
     public void update() {
-        if(gameState == RUNNING) {
+        if (gameState == RUNNING) {
             isWinning();
             npcMove();
-            isWinning();
         }
     }
 
@@ -191,7 +199,7 @@ public class Model {
     public void cellClicked(Cells cells) {
         if (gameState == RUNNING) {
 
-            if (cells == FIRST && images.getFirst() == blank) {
+            if (cells == FIRST && images.getFirst()==blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(0, cross);
                     currentPlayer = NPC;
@@ -271,17 +279,15 @@ public class Model {
     public void isWinning() {
         if (isCross()) {
             gameState = PAUSED;
-            scoreP1 = scoreP1 +1;
+            scoreP1 = scoreP1 + 1;
             setScoringP1(scoreP1 + " Poäng");
             setWinner(getPlayer1() + " Won!");
-        }
-        else if (isCircle()) {
+        } else if (isCircle()) {
             gameState = PAUSED;
-            scoreOpponent = scoreOpponent +1;
+            scoreOpponent = scoreOpponent + 1;
             setScoringOpponent(scoreOpponent + " Poäng");
-            setWinner(getOpponent() +" Won!");
-        }
-        else if (availableCells.isEmpty()) {
+            setWinner(getOpponent() + " Won!");
+        } else if (availableCells.isEmpty()) {
             setWinner("DRAW!");
             gameState = PAUSED;
         }
