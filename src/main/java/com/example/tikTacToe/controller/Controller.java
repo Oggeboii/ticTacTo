@@ -1,17 +1,12 @@
 package com.example.tikTacToe.controller;
 
-import com.example.tikTacToe.Cells;
+
 import com.example.tikTacToe.model.Model;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Cell;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
 
@@ -20,7 +15,7 @@ import static com.example.tikTacToe.Cells.*;
 
 public class Controller {
     public BorderPane root;
-    public HBox paneMenu;
+    public VBox paneMenu;
 
     public void initialize() {
         startRandomEvent();

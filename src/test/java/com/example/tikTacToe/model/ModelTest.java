@@ -3,11 +3,6 @@ package com.example.tikTacToe.model;
 import com.example.tikTacToe.Cells;
 import javafx.application.Platform;
 import org.junit.jupiter.api.*;
-
-import java.util.Arrays;
-
-import static com.example.tikTacToe.Cells.*;
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 class ModelTest {
 

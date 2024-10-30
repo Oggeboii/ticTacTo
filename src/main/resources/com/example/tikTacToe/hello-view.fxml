@@ -104,13 +104,12 @@
             </top>
           </BorderPane>
 
-          <HBox fx:id="paneMenu" alignment="CENTER" prefHeight="350.0" prefWidth="700.0" stylesheets="css/styles.css">
+          <VBox fx:id="paneMenu" alignment="CENTER" prefHeight="350.0" prefWidth="700.0" stylesheets="css/styles.css">
               <children>
+                  <Label alignment="TOP_CENTER" text="TicTacToe"/>
                   <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#playerVsNPCClicked" text="Player vs NPC" />
-                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Player vs Player (local)" />
-                  <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Player vs Player (online)" />
               </children>
-          </HBox>
+          </VBox>
       </children>
    </StackPane>
 </Pane>

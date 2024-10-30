@@ -5,7 +5,6 @@ import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -144,13 +143,16 @@ public class Model {
         this.winner.set(winner);
     }
 
-    public List<Cells> getAvailableCells() {
-        return availableCells;
-    }
 
     public void playerVsNPC() {
         currentPlayer = PLAYER1;
         setOpponent("NPC");
+        gameState = RUNNING;
+    }
+
+    public void playAgain() {
+        setWinner("");
+        resetBoard();
         gameState = RUNNING;
     }
 
@@ -175,12 +177,6 @@ public class Model {
         images.set(6, blank);
         images.set(7, blank);
         images.set(8, blank);
-    }
-
-    public void playAgain() {
-        setWinner("");
-        resetBoard();
-        gameState = RUNNING;
     }
 
     public void update() {
@@ -353,7 +349,4 @@ public class Model {
         return false;
     }
 
-    public GameState getGameState() {
-        return gameState;
-    }
 }
