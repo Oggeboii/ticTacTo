@@ -39,7 +39,6 @@ public class Controller {
         timeline.play();
     }
 
-
     private Model model = new Model();
 
     public Model getModel() {
@@ -87,12 +86,4 @@ public class Controller {
         model.cellClicked(NINTH);
     }
 
-
-    @FXML
-    private Label welcomeText;
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
 }

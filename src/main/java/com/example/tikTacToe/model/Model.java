@@ -17,16 +17,17 @@ import static com.example.tikTacToe.model.Player.*;
 
 public class Model {
     Random rand = new Random();
-    private final List<Cells> availableCells = new ArrayList<>();
+
+    public List<Cells> availableCells = new ArrayList<>();
+
     private ListProperty<Image> images = new SimpleListProperty<>(FXCollections.observableArrayList());
 
     GameState gameState = PAUSED;
-
     private int scoreP1 = 0;
+
     private int scoreOpponent = 0;
 
     private StringProperty winner = new SimpleStringProperty("");
-
     private StringProperty player1 = new SimpleStringProperty("Player1");
 
     private StringProperty opponent = new SimpleStringProperty("Player2");
@@ -36,10 +37,13 @@ public class Model {
     private final StringProperty scoringP1 = new SimpleStringProperty("0 Poäng");
 
     private final StringProperty scoringOpponent = new SimpleStringProperty("0 Poäng");
+
     Image cross;
 
     Image blank;
+
     Image circle;
+
     public Model() {
         currentPlayer = PLAYER1;
 
@@ -59,7 +63,6 @@ public class Model {
 
         availableCells.addAll(Arrays.asList(FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH));
     }
-
 
     public ObservableList<Image> getImages() {
         return images.get();
@@ -141,6 +144,10 @@ public class Model {
         this.winner.set(winner);
     }
 
+    public List<Cells> getAvailableCells() {
+        return availableCells;
+    }
+
     public void playerVsNPC() {
         currentPlayer = PLAYER1;
         setOpponent("NPC");
@@ -199,7 +206,7 @@ public class Model {
     public void cellClicked(Cells cells) {
         if (gameState == RUNNING) {
 
-            if (cells == FIRST && images.getFirst()==blank) {
+            if (cells == FIRST && images.getFirst() == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(0, cross);
                     currentPlayer = NPC;

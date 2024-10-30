@@ -4,6 +4,9 @@ import com.example.tikTacToe.Cells;
 import javafx.application.Platform;
 import org.junit.jupiter.api.*;
 
+import java.util.Arrays;
+
+import static com.example.tikTacToe.Cells.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 class ModelTest {
@@ -15,14 +18,16 @@ class ModelTest {
 
     Model model = new Model();
 
+
+
     @Nested
     @DisplayName("crossIsNotValidCellToClick")
     class crossIsNotValidCellToClick {
 
         @BeforeEach
         void setCurrentPlayerToPlayer1(){
+            model.playerVsNPC();
             model.setCurrentPlayer(Player.PLAYER1);
-
         }
 
         @Test
@@ -30,63 +35,63 @@ class ModelTest {
         void firstCellIsStillCircle() {
             model.getImages().set(0,model.circle);
             model.cellClicked(Cells.FIRST);
-            assertEquals(model.getImages().getFirst(), model.circle);
+            assertEquals(model.circle,model.getImages().getFirst());
         }
         @Test
         @DisplayName("secondCellIsStillCircle")
         void secondCellIsStillCircle() {
             model.getImages().set(1,model.circle);
             model.cellClicked(Cells.SECOND);
-            assertEquals(model.getImages().get(1), model.circle);
+            assertEquals(model.circle, model.getImages().get(1));
         }
         @Test
         @DisplayName("thirdCellIsStillCircle")
         void thirdCellIsStillCircle() {
             model.getImages().set(2,model.circle);
             model.cellClicked(Cells.THIRD);
-            assertEquals(model.getImages().get(2), model.circle);
+            assertEquals(model.circle, model.getImages().get(2));
         }
         @Test
         @DisplayName("fourthCellIsStillCircle")
         void fourthCellIsStillCircle() {
             model.getImages().set(3,model.circle);
             model.cellClicked(Cells.FOURTH);
-            assertEquals(model.getImages().get(3), model.circle);
+            assertEquals(model.circle, model.getImages().get(3));
         }
         @Test
         @DisplayName("fifthCellIsStillCircle")
         void fifthCellIsStillCircle() {
             model.getImages().set(4,model.circle);
             model.cellClicked(Cells.FIFTH);
-            assertEquals(model.getImages().get(4), model.circle);
+            assertEquals(model.circle, model.getImages().get(4));
         }
         @Test
         @DisplayName("sixthCellIsStillCircle")
         void sixthCellIsStillCircle() {
             model.getImages().set(5,model.circle);
             model.cellClicked(Cells.SIXTH);
-            assertEquals(model.getImages().get(5), model.circle);
+            assertEquals(model.circle, model.getImages().get(5));
         }
         @Test
         @DisplayName("seventhCellIsStillCircle")
         void seventhCellIsStillCircle() {
             model.getImages().set(6,model.circle);
             model.cellClicked(Cells.SEVENTH);
-            assertEquals(model.getImages().get(6), model.circle);
+            assertEquals(model.circle, model.getImages().get(6));
         }
         @Test
         @DisplayName("eightCellIsStillCircle")
         void eightCellIsStillCircle() {
             model.getImages().set(7,model.circle);
             model.cellClicked(Cells.EIGHTH);
-            assertEquals(model.getImages().get(7), model.circle);
+            assertEquals(model.circle, model.getImages().get(7));
         }
         @Test
         @DisplayName("ninthCellIsStillCircle")
         void ninthCellIsStillCircle() {
             model.getImages().set(8,model.circle);
             model.cellClicked(Cells.NINTH);
-            assertEquals(model.getImages().get(8), model.circle);
+            assertEquals(model.circle, model.getImages().get(8));
         }
     }
 
@@ -96,6 +101,7 @@ class ModelTest {
 
         @BeforeEach
         void setCurrentPlayerToNPC(){
+            model.playerVsNPC();
             model.setCurrentPlayer(Player.NPC);
         }
 
@@ -104,63 +110,63 @@ class ModelTest {
         void firstCellIsStillCross() {
             model.getImages().set(0,model.cross);
             model.cellClicked(Cells.FIRST);
-            assertEquals(model.getImages().getFirst(), model.cross);
+            assertEquals(model.cross, model.getImages().getFirst());
         }
         @Test
         @DisplayName("secondCellIsStillCross")
         void secondCellIsStillCross() {
             model.getImages().set(1,model.cross);
             model.cellClicked(Cells.SECOND);
-            assertEquals(model.getImages().get(1), model.cross);
+            assertEquals(model.cross, model.getImages().get(1));
         }
         @Test
         @DisplayName("thirdCellIsStillCross")
         void thirdCellIsStillCross() {
             model.getImages().set(2,model.cross);
             model.cellClicked(Cells.THIRD);
-            assertEquals(model.getImages().get(2), model.cross);
+            assertEquals(model.cross, model.getImages().get(2));
         }
         @Test
         @DisplayName("fourthCellIsStillCross")
         void fourthCellIsStillCross() {
             model.getImages().set(3,model.cross);
             model.cellClicked(Cells.FOURTH);
-            assertEquals(model.getImages().get(3), model.cross);
+            assertEquals(model.cross, model.getImages().get(3));
         }
         @Test
         @DisplayName("fifthCellIsStillCross")
         void fifthCellIsStillCross() {
             model.getImages().set(4,model.cross);
             model.cellClicked(Cells.FIFTH);
-            assertEquals(model.getImages().get(4), model.cross);
+            assertEquals(model.cross, model.getImages().get(4));
         }
         @Test
         @DisplayName("sixthCellIsStillCross")
         void sixthCellIsStillCross() {
             model.getImages().set(5,model.cross);
             model.cellClicked(Cells.SIXTH);
-            assertEquals(model.getImages().get(5), model.cross);
+            assertEquals(model.cross, model.getImages().get(5));
         }
         @Test
         @DisplayName("seventhCellIsStillCross")
         void seventhCellIsStillCross() {
             model.getImages().set(6,model.cross);
             model.cellClicked(Cells.SEVENTH);
-            assertEquals(model.getImages().get(6), model.cross);
+            assertEquals(model.cross, model.getImages().get(6));
         }
         @Test
         @DisplayName("eightCellIsStillCross")
         void eightCellIsStillCross() {
             model.getImages().set(7,model.cross);
             model.cellClicked(Cells.EIGHTH);
-            assertEquals(model.getImages().get(7), model.cross);
+            assertEquals(model.cross, model.getImages().get(7));
         }
         @Test
         @DisplayName("ninthCellIsStillCross")
         void ninthCellIsStillCross() {
             model.getImages().set(8,model.cross);
             model.cellClicked(Cells.NINTH);
-            assertEquals(model.getImages().get(8), model.cross);
+            assertEquals(model.cross, model.getImages().get(8));
         }
     }
 
@@ -177,7 +183,7 @@ class ModelTest {
             model.getImages().set(6,model.cross);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringP1());
         }
         @Test
         @DisplayName("Player1WonBySecondColumn")
@@ -187,7 +193,7 @@ class ModelTest {
             model.getImages().set(7,model.cross);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringP1());
         }
         @Test
         @DisplayName("Player1WonByThirdColumn")
@@ -197,7 +203,7 @@ class ModelTest {
             model.getImages().set(8,model.cross);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringP1());
         }
         @Test
         @DisplayName("Player1WonByFirstRow")
@@ -207,7 +213,7 @@ class ModelTest {
             model.getImages().set(2,model.cross);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringP1());
         }
         @Test
         @DisplayName("Player1WonBySecondRow")
@@ -217,7 +223,7 @@ class ModelTest {
             model.getImages().set(5,model.cross);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringP1());
         }
         @Test
         @DisplayName("Player1WonByThirdRow")
@@ -227,7 +233,7 @@ class ModelTest {
             model.getImages().set(8,model.cross);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringP1());
         }
         @Test
         @DisplayName("Player1WonByFirstDiagonal")
@@ -237,7 +243,7 @@ class ModelTest {
             model.getImages().set(8, model.cross);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(), "1 Poäng");
+            assertEquals("1 Poäng", model.getScoringP1());
         }
         @Test
         @DisplayName("Player1WonBySecondDiagonal")
@@ -247,7 +253,7 @@ class ModelTest {
             model.getImages().set(6, model.cross);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(), "1 Poäng");
+            assertEquals("1 Poäng", model.getScoringP1());
         }
     }
 
@@ -263,8 +269,9 @@ class ModelTest {
             model.getImages().set(6,model.circle);
             model.isWinning();
 
-            assertEquals(model.getScoringOpponent(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringOpponent());
         }
+
         @Test
         @DisplayName("PlayerNPCWonBySecondColumn")
         void PlayerNPCWonBySecondColumn() {
@@ -273,7 +280,7 @@ class ModelTest {
             model.getImages().set(7,model.circle);
             model.isWinning();
 
-            assertEquals(model.getScoringOpponent(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringOpponent());
         }
         @Test
         @DisplayName("PlayerNPCWonByThirdColumn")
@@ -283,7 +290,7 @@ class ModelTest {
             model.getImages().set(8,model.circle);
             model.isWinning();
 
-            assertEquals(model.getScoringOpponent(),"1 Poäng");
+            assertEquals("1 Poäng",model.getScoringOpponent());
         }
         @Test
         @DisplayName("PlayerNPCWonByFirstRow")
@@ -293,7 +300,7 @@ class ModelTest {
             model.getImages().set(2,model.circle);
             model.isWinning();
 
-            assertEquals(model.getScoringOpponent(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringOpponent());
         }
         @Test
         @DisplayName("PlayerNPCWonBySecondRow")
@@ -303,7 +310,7 @@ class ModelTest {
             model.getImages().set(5,model.circle);
             model.isWinning();
 
-            assertEquals(model.getScoringOpponent(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringOpponent());
         }
         @Test
         @DisplayName("PlayerNPCWonByThirdRow")
@@ -313,28 +320,62 @@ class ModelTest {
             model.getImages().set(8,model.circle);
             model.isWinning();
 
-            assertEquals(model.getScoringOpponent(),"1 Poäng");
+            assertEquals("1 Poäng", model.getScoringOpponent());
         }
         @Test
         @DisplayName("PlayerNPcWonByFirstDiagonal")
         void PlayerNPCWonByFirstDiagonal() {
-            model.getImages().set(0, model.cross);
-            model.getImages().set(4, model.cross);
-            model.getImages().set(8, model.cross);
+            model.getImages().set(0, model.circle);
+            model.getImages().set(4, model.circle);
+            model.getImages().set(8, model.circle);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(), "1 Poäng");
+            assertEquals("1 Poäng", model.getScoringOpponent());
         }
         @Test
-        @DisplayName("PlayerNPcWonBySecondDiagonal")
+        @DisplayName("PlayerNPCWonBySecondDiagonal")
         void PlayerNPCWonBySecondDiagonal() {
-            model.getImages().set(2, model.cross);
-            model.getImages().set(4, model.cross);
-            model.getImages().set(6, model.cross);
+            model.getImages().set(2, model.circle);
+            model.getImages().set(4, model.circle);
+            model.getImages().set(6, model.circle);
             model.isWinning();
 
-            assertEquals(model.getScoringP1(), "1 Poäng");
+            assertEquals("1 Poäng", model.getScoringOpponent());
         }
 
     }
+
+    @Test
+    @DisplayName("player1IsAnnouncedAsWinner")
+    void player1IsAnnouncedAsWinner() {
+        model.playerVsNPC();
+        model.getImages().set(0,model.cross);
+        model.getImages().set(3,model.cross);
+        model.getImages().set(6,model.cross);
+        model.isWinning();
+        assertEquals("Player1 Won!", model.getWinner() );
+    }
+
+    @Test
+    @DisplayName("playerNPCIsAnnouncedAsWinner")
+    void playerNPCIsAnnouncedAsWinner(){
+        model.playerVsNPC();
+        model.getImages().set(0,model.circle);
+        model.getImages().set(3,model.circle);
+        model.getImages().set(6,model.circle);
+        model.isWinning();
+        assertEquals("NPC Won!", model.getWinner() );
+    }
+
+    @Test
+    @DisplayName("drawIsAnnounced")
+    void drawIsAnnounced(){
+        model.playerVsNPC();
+        model.availableCells.clear();
+        model.isWinning();
+        assertEquals("DRAW!", model.getWinner());
+    }
+
+
+
 }
