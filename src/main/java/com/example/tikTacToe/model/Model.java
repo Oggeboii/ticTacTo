@@ -15,7 +15,7 @@ import static com.example.tikTacToe.model.GameState.*;
 import static com.example.tikTacToe.model.Player.*;
 
 public class Model {
-    Random rand = new Random();
+    private Random rand = new Random();
 
     public List<Cells> availableCells = new ArrayList<>();
 
@@ -24,6 +24,7 @@ public class Model {
     GameState gameState = PAUSED;
     private int scoreP1 = 0;
 
+    //playerp2
     private int scoreOpponent = 0;
 
     private StringProperty winner = new SimpleStringProperty("");
@@ -50,15 +51,7 @@ public class Model {
         circle = new Image(getClass().getResource("/com/example/tikTacToe/images/circle.png").toExternalForm());
         blank = new Image(getClass().getResource("/com/example/tikTacToe/images/blank.png").toExternalForm());
 
-        images.addFirst(blank);
-        images.add(1, blank);
-        images.add(2, blank);
-        images.add(3, blank);
-        images.add(4, blank);
-        images.add(5, blank);
-        images.add(6, blank);
-        images.add(7, blank);
-        images.add(8, blank);
+        addBlankToAll();
 
         availableCells.addAll(Arrays.asList(FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH));
     }
@@ -163,20 +156,20 @@ public class Model {
         setScoringP1(scoreP1 + " Poäng");
         setScoringOpponent(scoreOpponent + " Poäng");
         availableCells.clear();
+
         resetBoard();
     }
 
     public void resetBoard() {
         availableCells.addAll(Arrays.asList(FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH));
-        images.set(0, blank);
-        images.set(1, blank);
-        images.set(2, blank);
-        images.set(3, blank);
-        images.set(4, blank);
-        images.set(5, blank);
-        images.set(6, blank);
-        images.set(7, blank);
-        images.set(8, blank);
+        images.removeAll();
+        addBlankToAll();
+    }
+
+    private void addBlankToAll() {
+        for (int i = 0; i < 9; i++) {
+            images.add(i, blank);
+        }
     }
 
     public void update() {
@@ -205,89 +198,81 @@ public class Model {
             if (cells == FIRST && images.getFirst() == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(0, cross);
-                    currentPlayer = NPC;
                 } else if (currentPlayer == NPC) {
                     images.set(0, circle);
-                    currentPlayer = PLAYER1;
                 }
             } else if (cells == SECOND && images.get(1) == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(1, cross);
-                    currentPlayer = NPC;
                 } else if (currentPlayer == NPC) {
                     images.set(1, circle);
-                    currentPlayer = PLAYER1;
                 }
             } else if (cells == THIRD && images.get(2) == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(2, cross);
-                    currentPlayer = NPC;
                 } else if (currentPlayer == NPC) {
                     images.set(2, circle);
-                    currentPlayer = PLAYER1;
                 }
             } else if (cells == FOURTH && images.get(3) == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(3, cross);
-                    currentPlayer = NPC;
                 } else if (currentPlayer == NPC) {
                     images.set(3, circle);
-                    currentPlayer = PLAYER1;
                 }
             } else if (cells == FIFTH && images.get(4) == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(4, cross);
-                    currentPlayer = NPC;
                 } else if (currentPlayer == NPC) {
                     images.set(4, circle);
-                    currentPlayer = PLAYER1;
                 }
             } else if (cells == SIXTH && images.get(5) == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(5, cross);
-                    currentPlayer = NPC;
                 } else if (currentPlayer == NPC) {
                     images.set(5, circle);
-                    currentPlayer = PLAYER1;
                 }
             } else if (cells == SEVENTH && images.get(6) == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(6, cross);
-                    currentPlayer = NPC;
                 } else if (currentPlayer == NPC) {
                     images.set(6, circle);
-                    currentPlayer = PLAYER1;
                 }
             } else if (cells == EIGHTH && images.get(7) == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(7, cross);
-                    currentPlayer = NPC;
                 } else if (currentPlayer == NPC) {
                     images.set(7, circle);
-                    currentPlayer = PLAYER1;
                 }
             } else if (cells == NINTH && images.get(8) == blank) {
                 if (currentPlayer == PLAYER1) {
                     images.set(8, cross);
-                    currentPlayer = NPC;
                 } else if (currentPlayer == NPC) {
                     images.set(8, circle);
-                    currentPlayer = PLAYER1;
                 }
             }
             availableCells.remove(cells);
+            switchCurrentPlayer();
+        }
+    }
+
+    private void switchCurrentPlayer() {
+        if(currentPlayer == PLAYER1) {
+            currentPlayer = NPC;
+        }
+        else if (currentPlayer == NPC) {
+            currentPlayer = PLAYER1;
         }
     }
 
     public void isWinning() {
         if (isCross()) {
             gameState = PAUSED;
-            scoreP1 = scoreP1 + 1;
+            scoreP1++;
             setScoringP1(scoreP1 + " Poäng");
             setWinner(getPlayer1() + " Won!");
         } else if (isCircle()) {
             gameState = PAUSED;
-            scoreOpponent = scoreOpponent + 1;
+            scoreOpponent++;
             setScoringOpponent(scoreOpponent + " Poäng");
             setWinner(getOpponent() + " Won!");
         } else if (availableCells.isEmpty()) {
@@ -297,25 +282,11 @@ public class Model {
     }
 
     public boolean isCross() {
-        if (checkRows(cross))
-            return true;
-        else if (checkColumns(cross)) {
-            return true;
-        } else if (checkDiagonal(cross)) {
-            return true;
-        }
-        return false;
+        return checkRows(cross) || checkColumns(cross) || checkDiagonal(cross);
     }
 
     public boolean isCircle() {
-        if (checkRows(circle))
-            return true;
-        else if (checkColumns(circle)) {
-            return true;
-        } else if (checkDiagonal(circle)) {
-            return true;
-        }
-        return false;
+        return checkRows(circle) || checkColumns(circle) || checkDiagonal(circle);
     }
 
     private boolean checkRows(Image image) {

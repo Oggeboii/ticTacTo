@@ -8,7 +8,7 @@
 <Pane prefHeight="700.0" prefWidth="700.0" stylesheets="@css/styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tikTacToe.controller.Controller">
    <StackPane prefHeight="700.0" prefWidth="700.0">
       <children>
-          <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700" prefWidth="700" stylesheets="css/styles.css">
+          <BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700" prefWidth="700">
               <left>
                   <VBox prefHeight="200.0" prefWidth="75.0" BorderPane.alignment="CENTER">
                       <children>
@@ -103,8 +103,7 @@
                </HBox>
             </top>
           </BorderPane>
-
-          <VBox fx:id="paneMenu" alignment="CENTER" prefHeight="350.0" prefWidth="700.0" stylesheets="css/styles.css">
+          <VBox fx:id="paneMenu" alignment="CENTER" prefHeight="350.0" prefWidth="700.0">
               <children>
                   <Label alignment="TOP_CENTER" text="TicTacToe"/>
                   <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#playerVsNPCClicked" text="Player vs NPC" />
