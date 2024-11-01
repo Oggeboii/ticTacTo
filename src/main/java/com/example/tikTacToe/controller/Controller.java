@@ -53,32 +53,32 @@ public class Controller {
     }
 
     public void cellFirstClicked(MouseEvent mouseEvent) {
-        model.cellClicked(FIRST);
+        model.playerMove(FIRST);
     }
 
     public void cellSecondClicked(MouseEvent mouseEvent) {
-        model.cellClicked(SECOND);
+        model.playerMove(SECOND);
     }
     public void cellThirdClicked(MouseEvent mouseEvent) {
-        model.cellClicked(THIRD);
+        model.playerMove(THIRD);
     }
     public void cellFourthClicked(MouseEvent mouseEvent) {
-        model.cellClicked(FOURTH);
+        model.playerMove(FOURTH);
     }
     public void cellFifthClicked(MouseEvent mouseEvent) {
-        model.cellClicked(FIFTH);
+        model.playerMove(FIFTH);
     }
     public void cellSixthClicked(MouseEvent mouseEvent) {
-        model.cellClicked(SIXTH);
+        model.playerMove(SIXTH);
     }
     public void cellSeventhClicked(MouseEvent mouseEvent) {
-        model.cellClicked(SEVENTH);
+        model.playerMove(SEVENTH);
     }
     public void cellEighthClicked(MouseEvent mouseEvent) {
-        model.cellClicked(EIGHTH);
+        model.playerMove(EIGHTH);
     }
     public void cellNinthClicked(MouseEvent mouseEvent) {
-        model.cellClicked(NINTH);
+        model.playerMove(NINTH);
     }
 
 }

@@ -264,7 +264,7 @@ class ModelTest {
             model.getImages().set(6,model.circle);
             model.isWinning();
 
-            assertEquals("1 Poäng", model.getScoringOpponent());
+            assertEquals("1 Poäng", model.getScoringP2());
         }
 
         @Test
@@ -275,7 +275,7 @@ class ModelTest {
             model.getImages().set(7,model.circle);
             model.isWinning();
 
-            assertEquals("1 Poäng", model.getScoringOpponent());
+            assertEquals("1 Poäng", model.getScoringP2());
         }
         @Test
         @DisplayName("PlayerNPCWonByThirdColumn")
@@ -285,7 +285,7 @@ class ModelTest {
             model.getImages().set(8,model.circle);
             model.isWinning();
 
-            assertEquals("1 Poäng",model.getScoringOpponent());
+            assertEquals("1 Poäng",model.getScoringP2());
         }
         @Test
         @DisplayName("PlayerNPCWonByFirstRow")
@@ -295,7 +295,7 @@ class ModelTest {
             model.getImages().set(2,model.circle);
             model.isWinning();
 
-            assertEquals("1 Poäng", model.getScoringOpponent());
+            assertEquals("1 Poäng", model.getScoringP2());
         }
         @Test
         @DisplayName("PlayerNPCWonBySecondRow")
@@ -305,7 +305,7 @@ class ModelTest {
             model.getImages().set(5,model.circle);
             model.isWinning();
 
-            assertEquals("1 Poäng", model.getScoringOpponent());
+            assertEquals("1 Poäng", model.getScoringP2());
         }
         @Test
         @DisplayName("PlayerNPCWonByThirdRow")
@@ -315,7 +315,7 @@ class ModelTest {
             model.getImages().set(8,model.circle);
             model.isWinning();
 
-            assertEquals("1 Poäng", model.getScoringOpponent());
+            assertEquals("1 Poäng", model.getScoringP2());
         }
         @Test
         @DisplayName("PlayerNPcWonByFirstDiagonal")
@@ -325,7 +325,7 @@ class ModelTest {
             model.getImages().set(8, model.circle);
             model.isWinning();
 
-            assertEquals("1 Poäng", model.getScoringOpponent());
+            assertEquals("1 Poäng", model.getScoringP2());
         }
         @Test
         @DisplayName("PlayerNPCWonBySecondDiagonal")
@@ -335,7 +335,7 @@ class ModelTest {
             model.getImages().set(6, model.circle);
             model.isWinning();
 
-            assertEquals("1 Poäng", model.getScoringOpponent());
+            assertEquals("1 Poäng", model.getScoringP2());
         }
 
     }

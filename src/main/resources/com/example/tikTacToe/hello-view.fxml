@@ -20,8 +20,8 @@
               <right>
                   <VBox prefHeight="200.0" prefWidth="75.0" BorderPane.alignment="CENTER">
                       <children>
-                          <Label alignment="CENTER" text="${controller.model.opponent}" />
-                          <Label alignment="CENTER" text="${controller.model.scoringOpponent}" />
+                          <Label alignment="CENTER" text="${controller.model.player2}" />
+                          <Label alignment="CENTER" text="${controller.model.scoringP2}" />
                       </children>
                   </VBox>
               </right>
